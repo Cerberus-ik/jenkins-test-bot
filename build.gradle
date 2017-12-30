@@ -16,10 +16,7 @@ dependencies {
 }
 
 jar{
+    buildConfigField "String", "TOKEN", $TOKEN
     from configurations.compile.collect{ zipTree it}
     manifest.attributes "Main-Class": "de.treona.testBot.Main"
-}
-
-task settToken(){
-    buildConfigField "String", "TOKEN", $TOKEN
 }
