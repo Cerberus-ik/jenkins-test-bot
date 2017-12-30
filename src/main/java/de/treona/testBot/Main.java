@@ -8,11 +8,9 @@ import javax.security.auth.login.LoginException;
 
 public class Main {
 
-    private static String TOKEN;
-
     public static void main(String[] args){
         try {
-            new JDABuilder(AccountType.BOT).setToken(TOKEN).buildBlocking();
+            new JDABuilder(AccountType.BOT).setToken(System.getenv("TTS_BOT_TOKEN")).buildBlocking();
         } catch (LoginException | InterruptedException | RateLimitedException e) {
             e.printStackTrace();
         }
